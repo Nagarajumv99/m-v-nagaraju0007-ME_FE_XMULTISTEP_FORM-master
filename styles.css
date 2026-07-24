@@ -50,10 +50,7 @@ p.summary-para {
   padding-top: 30px;
 }
 .step.active {
-  display: block;
-}
-.step {
-  display: none;
+  display: block !important;
 }
 span.step_info {
   color: #02295a;
