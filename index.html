@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi-Step Form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="main">
+    <aside class="sidebar">
+      <ul>
+        <li class="active"><span class="circle">1</span><span class="steps_info"><span class="steps">Step 1</span><span class="step_info">Your Info</span></span></li>
+        <li><span class="circle">2</span><span class="steps_info"><span class="steps">Step 2</span><span class="step_info">Select Plan</span></span></li>
+        <li><span class="circle">3</span><span class="steps_info"><span class="steps">Step 3</span><span class="step_info">Add-ons</span></span></li>
+        <li><span class="circle">4</span><span class="steps_info"><span class="steps">Step 4</span><span class="step_info">Summary</span></span></li>
+      </ul>
+    </aside>
+
+    <div class="container">
+      <!-- Step 1 -->
+      <div class="step step-1 active">
+        <h2 class="heading">Personal Info</h2>
+        <p class="summary-para">Please provide your name, email address, and phone number.</p>
+        <form id="infoForm">
+          <label for="userName"><span class="flex"><span>Name</span><span class="error-message name-error"></span></span><input type="text" name="userName" id="userName" placeholder="e.g. Stephen King" required></label>
+          <label for="email"><span class="flex"><span>Email Address</span><span class="error-message email-error"></span></span><input type="email" name="email" id="email" placeholder="e.g. Stephenking@lorem.com" required></label>
+          <label for="phone"><span class="flex"><span>Phone Number</span><span class="error-message phone-error"></span></span><input type="tel" id="phone" name="phone" placeholder="e.g. 7894561230" required></label>
+          <button id="next-button" type="button" class="next">Next</button>
+        </form>
+        <p class="error-message"></p>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="step step-2">
+        <h2 class="heading">Select Your Plan</h2>
+        <p class="graypara">You have the option of monthly or yearly billing</p>
+        <div class="plans">
+          <div class="plan_card">
+            <img src="assets/images/icon-arcade.svg" alt="">
+            <span class="flexcol"><span class="bfont">Arcade</span><span class="val">$9/mo</span></span>
+          </div>
+          <div class="plan_card">
+            <img src="assets/images/icon-advanced.svg" alt="">
+            <span class="flexcol"><span class="bfont">Advance</span><span class="val">$12/mo</span></span>
+          </div>
+          <div class="plan_card">
+            <img src="assets/images/icon-pro.svg" alt="">
+            <span class="flexcol"><span class="bfont">Pro</span><span class="val">$15/mo</span></span>
+          </div>
+        </div>
+        
+        <p class="error-message"></p>
+
+        <div class="billing-toggle">
+          <input type="checkbox" id="billingSwitch" >
+          <label for="billingSwitch" class="switch">
+            <span class="option monthly">Monthly</span>
+            <span class="option yearly">Yearly</span>
+            <span class="slider"></span>
+          </label>
+        </div>
+        <button id="next-plan" type="button" class="next">Next</button>
+        <button id="back-plan" type="button" class="back">Go Back</button>
+        
+        
+      </div>
+
+      <!-- Step 3 -->
+      <div class="step step-3">
+        <h2 class="heading">Pick Add-ons</h2>
+        <p class="graypara">You have the option of monthly or yearly billing</p>
+        <div class="addons">
+          <div class="addon_card">
+            <span class="check"></span>
+            <div>
+              <h3>Online Services</h3>
+              <p class="graypara">Access to multiplayer games</p>
+            </div>
+            <span class="price">$2/mo</span>
+          </div>
+          <div class="addon_card">
+            <span class="check"></span>
+            <div>
+              <h3>Larger Storage</h3>
+              <p class="graypara">Access to multiplayer games</p>
+            </div>
+            <span class="price">$3/mo</span>
+          </div>
+          <div class="addon_card">
+            <span class="check"></span>
+            <div>
+              <h3>Customizable Profile</h3>
+              <p class="graypara">Access to multiplayer games</p>
+            </div>
+            <span class="price">$2/mo</span>
+          </div>
+        </div>
+        <button id="next-addon" type="button" class="next">Next Step</button>
+        <button id="back-addon" type="button" class="back">Go Back</button>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="step step-4">
+        <h2 class="heading">Finishing up</h2>
+        <p class="graypara">Double check everything looks OK before confirming</p>
+        <div id="summary"></div>
+        <button id="confirm" type="button" class="confirm">Confirm</button>
+        <button id="back-summary" type="button" class="back">Go Back</button>
+      </div>
+
+      <!-- Thank You -->
+      <div class="step step-5">
+        <img src="assets/images/icon-thank-you.svg" alt="thank you" class="thankyou">
+        <h2 class="heading">Thank You!</h2>
+        <p class="summary-para">Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us<br>support@loremgaming.com</p>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

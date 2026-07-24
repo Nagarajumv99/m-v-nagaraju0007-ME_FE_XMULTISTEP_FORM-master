@@ -1,0 +1,361 @@
+*{
+  box-sizing: border-box;
+  padding:0px;
+  margin: 0px;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #ffffff;
+}
+
+.main {
+  display: flex;
+  min-height: calc(100vh - 60px);
+  padding: 30px;
+}
+
+.sidebar {
+  background: url(assets/images/bg-sidebar-desktop.svg);
+  color: #fff;
+  padding: 20px;
+  width: 22%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 25px 0;
+}
+
+p.summary-para {
+  margin-bottom: 50px;
+}
+.container {
+  flex: 1;
+  padding-left: 80px;
+  position: relative;
+}
+.step {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: calc(100% - 80px);
+  padding-top: 30px;
+}
+.step {
+  display: none;
+}
+span.step_info {
+  color: #02295a;
+  font-weight: 600;
+}
+.step.active {
+  display: block;
+}
+aside.sidebar ul li {
+  align-items: center;
+  display: flex;
+  column-gap: 15px;
+}
+aside.sidebar ul li.active span.circle {
+  background: #bfe2fd;
+  color: #02295a;
+}
+aside.sidebar ul li span.circle {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  border: 1px solid #ffffff;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+span.steps_info {
+  display: flex;
+  flex-direction: column;
+}
+input {
+  display: block;
+  margin: 10px 0;
+  padding: 8px;
+  width: 100%;
+  border: 2px solid #adadad;
+  border-radius: 10px;
+}
+
+.next {
+  padding: 10px 20px;
+  margin: 10px 5px;
+  cursor: pointer;
+  border: none;
+  background: #02295a;
+  color: #fff;
+  border-radius: 4px;
+  position: absolute;
+  right: 0;
+}
+
+next:hover {
+  background: #054899;
+}
+.back{
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #b0b2c0;
+}
+.plans {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.error-message {
+  color: red;
+  font-size: 14px;
+}
+
+.plan_card{
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin: 10px 0;
+  cursor: pointer;
+  width: 300px;
+  height: 300px;
+}
+.gbox {
+  background: #f0f6ff;
+  padding: 18px;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 7px;
+}
+div#summary>p {
+  margin-bottom: 30px;
+  margin-top: 16px;
+  margin-left: 16px;
+}
+button#confirm {
+  padding: 10px 20px;
+  margin: 10px 5px;
+  cursor: pointer;
+  border: none;
+  background: #02295a;
+  color: #fff;
+  border-radius: 4px;
+  position: absolute;
+  right: 0;
+}
+.step.step-5.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.addon_card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin: 10px 0;
+  cursor: pointer;
+  width: 450px;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.check{
+  width:18px;
+  height:18px;
+  border:1px solid #02295a;
+  display: block;
+}
+.selected .check::before {
+  content: "\2713";
+  font-size: 16px;
+  font-weight: bold;
+  color: #02295a;
+  transform: scale(0);
+  transition: transform 0.1s ease-in-out;
+  position: relative;
+  top: -3px;
+  left: 3px;
+}
+.addons {
+  display: flex;
+  column-gap: 70px;
+  flex-direction: column;
+}
+.plan_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 3px solid #ccc;
+  border-radius: 25px;
+}
+.graypara{
+  color: #b0b2c0;
+  margin-bottom: 30px;
+}
+span.bfont {
+  font-size: 21px;
+  font-weight: 700;
+  color: #02295a;
+  line-height: 32px;
+}
+span.val {
+  color: #b0b2c0;
+  font-size: 14px;
+}
+.plan_card:hover, .addon_card:hover {
+  border-color: #1abc9c;
+}
+.plan_card img {
+  width: 100px;
+}
+.plan_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+span.flexcol {
+  display: flex;
+  flex-direction: column;
+}
+.plan_card.selected, .addon_card.selected {
+  border-color: #1abc9c;
+  background: #e8f8f5;
+}
+span.flex {
+display: flex;
+justify-content: space-between;
+}
+
+.billing-toggle {
+  position: relative;
+  width: 100%;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  background: #dee4e9;
+  height: 150px;
+  align-items: center;
+  border-radius: 10px;
+}
+span.option.yearly {
+  position: absolute;
+  left: calc(50% + 66px);
+  margin-top: 11px;
+}
+span.option.monthly {
+  position: absolute;
+  left: calc(50% - 129px);
+  margin-top: 11px;
+}
+.switch {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ccc;
+  border-radius: 30px;
+  padding: 5px 10px;
+  position: relative;
+  cursor: pointer;
+  height: 40px;
+  width: 100px;
+}
+
+.option {
+  flex: 1;
+  text-align: center;
+  font-weight: bold;
+  color: #333;
+  z-index: 2;
+}
+.addon_card .graypara{
+  margin-bottom: 0px;
+}
+.slider {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 40px;
+  height: 34px;
+  background: #02295a;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.billing-toggle input {
+  display: none;
+}
+
+.billing-toggle input:checked + .switch .slider {
+  left: 55px; /* move to right side */
+}
+.summary-para{
+  text-align: center;
+}
+.gbox p {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 9px;
+}
+.gbox p:last-child {
+  border-bottom: none;
+}
+@media (max-width: 450px) {
+  .main {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    text-align: center;
+  }
+  .sidebar{
+    background: url(assets/images/bg-sidebar-mobile.svg);
+  }
+  span.steps_info {
+    display: none;
+}
+.sidebar ul {
+  display: flex;
+  justify-content: space-between;
+}
+.container {
+  flex: 1;
+  padding-left: 23px;
+  position: relative;
+  background: #fff;
+  top: -30px;
+  width: 90%;
+  left: 5%;
+  border-radius: 20px;
+}
+.plans {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.plan_card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 150px;
+  align-items: center;
+}
+.step {
+ width: auto;
+}
+.addon_card {
+  width: 100%;
+  column-gap: 12px;
+}
+}
