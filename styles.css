@@ -49,15 +49,15 @@ p.summary-para {
   width: calc(100% - 80px);
   padding-top: 30px;
 }
+.step.active {
+  display: block;
+}
 .step {
   display: none;
 }
 span.step_info {
   color: #02295a;
   font-weight: 600;
-}
-.step.active {
-  display: block;
 }
 aside.sidebar ul li {
   align-items: center;
