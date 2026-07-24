@@ -27,23 +27,13 @@ document.getElementById("next-button").addEventListener("click", () => {
   emailError.textContent = "";
   phoneError.textContent = "";
 
-  if (!name) {
-    nameError.textContent = "Enter your name";
-    valid = false;
-  }
-  if (!email) {
-    emailError.textContent = "Enter email";
-    valid = false;
-  } else if (!/\S+@\S+\.\S+/.test(email)) {
-    emailError.textContent = "Invalid email format.";
-    valid = false;
-  }
-  if (!phone) {
-    phoneError.textContent = "Enter your mobile number";
-    valid = false;
-  }
+  if (!name) { nameError.textContent = "Enter your name"; valid = false; }
+  if (!email) { emailError.textContent = "Enter email"; valid = false; }
+  else if (!/\S+@\S+\.\S+/.test(email)) { emailError.textContent = "Invalid email format."; valid = false; }
+  if (!phone) { phoneError.textContent = "Enter your mobile number"; valid = false; }
 
   if (valid) {
+    // ✅ Move to Step 2 only after validation passes
     showStep(1);
   }
 });
