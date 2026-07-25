@@ -52,6 +52,12 @@ p.summary-para {
 .step.active {
   display: block !important;
 }
+.step-1 p.summary-para {
+  text-align: left;
+}
+.step.step-5 {
+  text-align: center;
+}
 span.step_info {
   color: #02295a;
   font-weight: 600;
