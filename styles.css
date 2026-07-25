@@ -49,8 +49,12 @@ p.summary-para {
   width: calc(100% - 80px);
   padding-top: 30px;
 }
+.step {
+  display: none;
+}
+
 .step.active {
-  display: block !important;
+  display: block;
 }
 .step-1 p.summary-para {
   text-align: left;
@@ -105,7 +109,7 @@ input {
   right: 0;
 }
 
-next:hover {
+.next:hover {
   background: #054899;
 }
 .back{
@@ -325,7 +329,7 @@ span.option.monthly {
     background: url(assets/images/bg-sidebar-mobile.svg);
   }
   span.steps_info {
-    display: none;
+  
 }
 .sidebar ul {
   display: flex;
