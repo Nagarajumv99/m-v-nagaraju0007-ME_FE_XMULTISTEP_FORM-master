@@ -6,7 +6,15 @@ let selectedAddons = [];
 let billingType = "monthly"; // default to monthly since checkbox is checked
 
 function showStep(index) {
-  steps.forEach((step, i) => step.classList.toggle("active", i === index));
+  steps.forEach((step, i) => {
+    if (i === index) {
+      step.classList.add("active");
+      step.style.display = "flex";   // show active step
+    } else {
+      step.classList.remove("active");
+      step.style.display = "none";    // hide inactive steps
+    }
+  });
   sidebarItems.forEach((item, i) => item.classList.toggle("active", i === index));
   currentStep = index;
 }
