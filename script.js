@@ -9,7 +9,7 @@ function showStep(index) {
   steps.forEach((step, i) => {
     if (i === index) {
       step.classList.add("active");
-      step.style.display = "flex";   // show active step
+      step.style.display = "block";   // show active step
     } else {
       step.classList.remove("active");
       step.style.display = "none";    // hide inactive steps
