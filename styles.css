@@ -52,7 +52,6 @@ p.summary-para {
 .step {
   display: none;
 }
-
 .step.active {
   display: block;
 }
@@ -66,6 +65,7 @@ span.step_info {
   color: #02295a;
   font-weight: 600;
 }
+
 aside.sidebar ul li {
   align-items: center;
   display: flex;
