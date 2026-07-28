@@ -173,6 +173,7 @@ button#confirm {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 .check{
   width:18px;
@@ -321,6 +322,14 @@ span.option.monthly {
   width: 68%;
   display: flex;
   justify-content: space-between;
+}
+input[type="checkbox"] {
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  text-align: left;
+  height: 100%;
+  opacity: 0;
 }
 @media (max-width: 450px) {
   .nav-buttons {
