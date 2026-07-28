@@ -16,10 +16,9 @@ function showStep(index) {
   sidebarItems.forEach((item, i) => item.classList.toggle("active", i === index));
   currentStep = index;
 
-  // Button visibility/text adjustments
-  back.style.display = index === 0 ? "none" : "inline-block"; // hide Back on Step 1
-  nxt.textContent = index === 3 ? "Confirm" : "Next step";    // change text on Step 4
-  if (index === 4) { // Thank You step
+  back.style.display = index === 0 ? "none" : "inline-block";
+  nxt.textContent = index === 3 ? "Confirm" : "Next step";
+  if (index === 4) {
     nxt.style.display = "none";
     back.style.display = "none";
   } else {
@@ -30,7 +29,6 @@ function showStep(index) {
 // Next button logic
 nxt.addEventListener("click", () => {
   if (currentStep === 0) {
-    // Step 1 validation
     const name = document.querySelector('input[name="userName"]').value.trim();
     const email = document.querySelector('input[name="email"]').value.trim();
     const phone = document.querySelector('input[name="phone"]').value.trim();
@@ -52,7 +50,6 @@ nxt.addEventListener("click", () => {
     if (valid) showStep(1);
 
   } else if (currentStep === 1) {
-    // Step 2 plan validation
     const error = document.querySelector(".step-2 .error-message");
     if (!selectedPlan) {
       error.textContent = "Please select a plan";
@@ -62,12 +59,15 @@ nxt.addEventListener("click", () => {
     showStep(2);
 
   } else if (currentStep === 2) {
-    // Step 3 → Summary
+    // Collect selected add-ons from checkboxes
+    selectedAddons = [];
+    document.querySelectorAll(".addon-checkbox:checked").forEach(cb => {
+      selectedAddons.push(cb.value);
+    });
     populateSummary();
     showStep(3);
 
   } else if (currentStep === 3) {
-    // Step 4 → Thank You
     showStep(4);
   }
 });
@@ -94,14 +94,14 @@ billingSwitch.addEventListener("change", () => {
   billingType = billingSwitch.checked ? "yearly" : "monthly";
 });
 
-// Add-ons
-document.querySelectorAll(".addon_card").forEach(card => {
-  card.addEventListener("click", () => {
-    card.classList.toggle("selected");
-    if (card.classList.contains("selected")) {
-      selectedAddons.push(card.textContent.trim());
+// Add-ons (checkbox selection toggles parent div class)
+document.querySelectorAll(".addon-checkbox").forEach(cb => {
+  cb.addEventListener("change", () => {
+    const parent = cb.closest(".addon_card");
+    if (cb.checked) {
+      parent.classList.add("selected");
     } else {
-      selectedAddons = selectedAddons.filter(a => a !== card.textContent.trim());
+      parent.classList.remove("selected");
     }
   });
 });
