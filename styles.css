@@ -49,9 +49,6 @@ p.summary-para {
   width: calc(100% - 80px);
   padding-top: 30px;
 }
-.step {
-  display: none;
-}
 .step.active {
   display: block;
 }
@@ -106,7 +103,7 @@ input {
   color: #fff;
   border-radius: 4px;
   position: absolute;
-  right: 17px;
+  right: 5%;
 }
 
 .next:hover {
@@ -318,6 +315,10 @@ span.option.monthly {
   border-bottom: none;
 }
 @media (max-width: 450px) {
+
+  .next {
+    right: 17px;
+  }
   .main {
     flex-direction: column;
     padding: 0px;
