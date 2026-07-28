@@ -314,8 +314,23 @@ span.option.monthly {
 .gbox p:last-child {
   border-bottom: none;
 }
+.nav-buttons {
+  position: absolute;
+  top: 70%;
+  left: 30%;
+  width: 68%;
+  display: flex;
+  justify-content: space-between;
+}
 @media (max-width: 450px) {
-
+  .nav-buttons {
+    position: absolute;
+    top: auto;
+    bottom: 7%;
+    left: 8%;
+    width: 91%;
+    align-items: center;
+}
   .next {
     right: 17px;
   }
