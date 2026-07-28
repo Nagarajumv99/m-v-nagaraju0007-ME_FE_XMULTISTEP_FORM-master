@@ -6,7 +6,7 @@
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  background: #ffffff;
+  background: #f0f6ff;
 }
 
 .main {
@@ -92,7 +92,7 @@ input {
   display: block;
   margin: 10px 0;
   padding: 8px;
-  width: 100%;
+  width: 95%;
   border: 2px solid #adadad;
   border-radius: 10px;
 }
@@ -106,7 +106,7 @@ input {
   color: #fff;
   border-radius: 4px;
   position: absolute;
-  right: 0;
+  right: 17px;
 }
 
 .next:hover {
@@ -224,7 +224,7 @@ span.val {
   border-color: #1abc9c;
 }
 .plan_card img {
-  width: 100px;
+  width: 61px;
 }
 .plan_card {
   display: flex;
@@ -320,6 +320,7 @@ span.option.monthly {
 @media (max-width: 450px) {
   .main {
     flex-direction: column;
+    padding: 0px;
   }
   .sidebar {
     width: 100%;
@@ -327,9 +328,12 @@ span.option.monthly {
   }
   .sidebar{
     background: url(assets/images/bg-sidebar-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 260px;
   }
   span.steps_info {
-  
+  display: none;
 }
 .sidebar ul {
   display: flex;
@@ -340,7 +344,7 @@ span.option.monthly {
   padding-left: 23px;
   position: relative;
   background: #fff;
-  top: -30px;
+  top: -130px;
   width: 90%;
   left: 5%;
   border-radius: 20px;
@@ -354,12 +358,14 @@ span.option.monthly {
 .plan_card {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  height: 150px;
+  justify-content: flex-start;
+  height: 95px;
   align-items: center;
+  column-gap: 30px;
+  width: 100%;
 }
 .step {
- width: auto;
+ width: 90%;
 }
 .addon_card {
   width: 100%;
