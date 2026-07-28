@@ -58,15 +58,17 @@ nxt.addEventListener("click", () => {
     error.textContent = "";
     showStep(2);
 
-  } else if (currentStep === 2) {
-    // Collect selected add-ons from checkboxes
+  }  else if (currentStep === 2) {
+
     selectedAddons = [];
+  
     document.querySelectorAll(".addon-checkbox:checked").forEach(cb => {
       selectedAddons.push(cb.value);
     });
+  
     populateSummary();
     showStep(3);
-
+  
   } else if (currentStep === 3) {
     showStep(4);
   }
@@ -95,14 +97,17 @@ billingSwitch.addEventListener("change", () => {
 });
 
 // Add-ons (checkbox selection toggles parent div class)
-document.querySelectorAll(".addon-checkbox").forEach(cb => {
-  cb.addEventListener("change", () => {
-    const parent = cb.closest(".addon_card");
-    if (cb.checked) {
-      parent.classList.add("selected");
-    } else {
-      parent.classList.remove("selected");
-    }
+// Add-ons
+document.querySelectorAll(".addon_card").forEach(card => {
+  const checkbox = card.querySelector(".addon-checkbox");
+
+  card.addEventListener("click", () => {
+    checkbox.checked = !checkbox.checked;
+    checkbox.dispatchEvent(new Event("change", { bubbles: true }));
+  });
+
+  checkbox.addEventListener("change", () => {
+    card.classList.toggle("selected", checkbox.checked);
   });
 });
 
