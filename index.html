@@ -26,13 +26,12 @@
           <label for="userName"><span class="flex"><span>Name</span><span class="error-message name-error"></span></span><input type="text" name="userName" id="userName" placeholder="e.g. Stephen King" required></label>
           <label for="email"><span class="flex"><span>Email Address</span><span class="error-message email-error"></span></span><input type="email" name="email" id="email" placeholder="e.g. Stephenking@lorem.com" required></label>
           <label for="phone"><span class="flex"><span>Phone Number</span><span class="error-message phone-error"></span></span><input type="tel" id="phone" name="phone" placeholder="e.g. 7894561230" required></label>
-          <button id="next-button" type="button" class="next">Next step</button>
         </form>
         <p class="error-message"></p>
       </div>
 
       <!-- Step 2 -->
-      <div class="step step-2">
+      <div class="step step-2" style="display:none;">
         <h2 class="heading">Select Your Plan</h2>
         <p class="graypara">You have the option of monthly or yearly billing</p>
         <div class="plans">
@@ -49,25 +48,19 @@
             <span class="flexcol"><span class="bfont">Pro</span><span class="val">$15/mo</span></span>
           </div>
         </div>
-        
         <p class="error-message"></p>
-
         <div class="billing-toggle">
-          <input type="checkbox" id="billingSwitch" >
+          <input type="checkbox" id="billingSwitch">
           <label for="billingSwitch" class="switch">
             <span class="option monthly">Monthly</span>
             <span class="option yearly">Yearly</span>
             <span class="slider"></span>
           </label>
         </div>
-        <button id="next-button" type="button" class="next">Next step</button>
-        <button id="back-plan" type="button" class="back">Go Back</button>
-        
-        
       </div>
 
       <!-- Step 3 -->
-      <div class="step step-3">
+      <div class="step step-3" style="display:none;">
         <h2 class="heading">Pick Add-ons</h2>
         <p class="graypara">You have the option of monthly or yearly billing</p>
         <div class="addons">
@@ -96,25 +89,27 @@
             <span class="price">$2/mo</span>
           </div>
         </div>
-        <button id="next-button" type="button" class="next">Next step</button>
-        <button id="back-addon" type="button" class="back">Go Back</button>
       </div>
 
       <!-- Step 4 -->
-      <div class="step step-4">
+      <div class="step step-4" style="display:none;">
         <h2 class="heading">Finishing up</h2>
         <p class="graypara">Double check everything looks OK before confirming</p>
         <div id="summary"></div>
-        <button id="next-button" type="button" class="confirm next">Confirm</button>
-        <button id="back-summary" type="button" class="back">Go Back</button>
       </div>
 
       <!-- Thank You -->
-      <div class="step step-5">
+      <div class="step step-5" style="display:none;">
         <img src="assets/images/icon-thank-you.svg" alt="thank you" class="thankyou">
         <h2 class="heading">Thank You!</h2>
         <p class="summary-para">Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us<br>support@loremgaming.com</p>
       </div>
+    </div>
+
+    <!-- Unified navigation buttons -->
+    <div class="nav-buttons">
+      <button id="back-button" type="button" class="back">Go Back</button>
+      <button id="next-button" type="button" class="next">Next step</button>
     </div>
   </div>
   <script src="script.js"></script>
