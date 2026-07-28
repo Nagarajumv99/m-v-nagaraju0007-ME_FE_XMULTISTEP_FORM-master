@@ -324,13 +324,10 @@ span.option.monthly {
   display: flex;
   justify-content: space-between;
 }
-input[type="checkbox"] {
-  width: 15px;
-  position: relative;
-  left: 0px;
-  text-align: left;
-  height: 100%;
-  opacity: 1;
+input.addon-checkbox {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
 }
 span.price {
   position: absolute;
